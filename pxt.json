@@ -1,5 +1,6 @@
 {
     "name": "全景地圖-太空艙",
+    "version": "1.0.0",
     "description": "",
     "dependencies": {
         "device": "*"
