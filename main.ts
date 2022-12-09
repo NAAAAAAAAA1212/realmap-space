@@ -61,6 +61,10 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖18`, function (sp
     tiles.setCurrentTilemap(normal)
     tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖2`)
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖21`, function (sprite, location) {
+    game.splash("YOU HAVE BEEN EJECTED")
+    tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖2`)
+})
 let emergency_meeting = 0
 let mySprite: Sprite = null
 let blackhole: tiles.TileMapData = null
