@@ -1,3 +1,22 @@
+scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖27`, function (sprite, location) {
+    adminlock()
+})
+function adminunlock () {
+    tiles.setTileAt(tiles.getTileLocation(5, 29), assets.tile`我的貼圖32`)
+    tiles.setTileAt(tiles.getTileLocation(5, 31), assets.tile`我的貼圖32`)
+    tiles.setTileAt(tiles.getTileLocation(5, 33), assets.tile`我的貼圖32`)
+    tiles.setTileAt(tiles.getTileLocation(5, 35), assets.tile`我的貼圖32`)
+    tiles.setTileAt(tiles.getTileLocation(5, 37), assets.tile`我的貼圖32`)
+    tiles.setTileAt(tiles.getTileLocation(5, 39), assets.tile`我的貼圖32`)
+    tiles.setTileAt(tiles.getTileLocation(5, 41), assets.tile`我的貼圖32`)
+    tiles.setWallAt(tiles.getTileLocation(5, 29), false)
+    tiles.setWallAt(tiles.getTileLocation(5, 31), false)
+    tiles.setWallAt(tiles.getTileLocation(5, 33), false)
+    tiles.setWallAt(tiles.getTileLocation(5, 35), false)
+    tiles.setWallAt(tiles.getTileLocation(5, 37), false)
+    tiles.setWallAt(tiles.getTileLocation(5, 39), false)
+    tiles.setWallAt(tiles.getTileLocation(5, 41), false)
+}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖20`, function (sprite, location) {
     emergency_meeting = randint(1, 4)
     if (emergency_meeting == 1) {
@@ -16,6 +35,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖20`, function (sp
     pause(500)
     game.splash("EMERGENCY MEETING")
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖36`, function (sprite, location) {
+    adminunlock()
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖17`, function (sprite, location) {
     tiles.setCurrentTilemap(blackhole)
     tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖2`)
@@ -29,11 +51,22 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖18`, function (sp
     tiles.setCurrentTilemap(normal)
     tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖2`)
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖21`, function (sprite, location) {
-    music.powerUp.play()
-    game.splash("YOU HAVE BEEN EJECTED")
-    tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖2`)
-})
+function adminlock () {
+    tiles.setTileAt(tiles.getTileLocation(5, 29), assets.tile`我的貼圖35`)
+    tiles.setTileAt(tiles.getTileLocation(5, 31), assets.tile`我的貼圖35`)
+    tiles.setTileAt(tiles.getTileLocation(5, 33), assets.tile`我的貼圖35`)
+    tiles.setTileAt(tiles.getTileLocation(5, 35), assets.tile`我的貼圖35`)
+    tiles.setTileAt(tiles.getTileLocation(5, 37), assets.tile`我的貼圖35`)
+    tiles.setTileAt(tiles.getTileLocation(5, 39), assets.tile`我的貼圖35`)
+    tiles.setTileAt(tiles.getTileLocation(5, 41), assets.tile`我的貼圖35`)
+    tiles.setWallAt(tiles.getTileLocation(5, 29), true)
+    tiles.setWallAt(tiles.getTileLocation(5, 31), true)
+    tiles.setWallAt(tiles.getTileLocation(5, 33), true)
+    tiles.setWallAt(tiles.getTileLocation(5, 35), true)
+    tiles.setWallAt(tiles.getTileLocation(5, 37), true)
+    tiles.setWallAt(tiles.getTileLocation(5, 39), true)
+    tiles.setWallAt(tiles.getTileLocation(5, 41), true)
+}
 let emergency_meeting = 0
 let mySprite: Sprite = null
 let blackhole: tiles.TileMapData = null
