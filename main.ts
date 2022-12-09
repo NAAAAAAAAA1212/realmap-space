@@ -1,3 +1,21 @@
+scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖20`, function (sprite, location) {
+    emergency_meeting = randint(1, 4)
+    if (emergency_meeting == 1) {
+        tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖22`)
+    }
+    if (emergency_meeting == 2) {
+        tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖23`)
+    }
+    if (emergency_meeting == 3) {
+        tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖24`)
+    }
+    if (emergency_meeting == 4) {
+        tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖25`)
+    }
+    music.buzzer.play()
+    pause(500)
+    game.splash("EMERGENCY MEETING")
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖17`, function (sprite, location) {
     tiles.setCurrentTilemap(blackhole)
     tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖2`)
@@ -11,6 +29,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`我的貼圖18`, function (sp
     tiles.setCurrentTilemap(normal)
     tiles.placeOnRandomTile(mySprite, assets.tile`我的貼圖2`)
 })
+let emergency_meeting = 0
 let mySprite: Sprite = null
 let blackhole: tiles.TileMapData = null
 let normal: tiles.TileMapData = null
